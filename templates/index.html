@@ -1,0 +1,39 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Early Health Predictor</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Early Health Predictor</h1>
+        <form method="POST">
+            <label>Select your symptoms:</label>
+            <div class="symptom-list">
+                {% for symptom in symptoms %}
+                    <label><input type="checkbox" name="symptoms" value="{{ symptom }}"> {{ symptom.replace('_', ' ').title() }}</label>
+                {% endfor %}
+            </div>
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if result %}
+        <div class="result">
+            <h2>Disease Prediction: {{ result.disease }}</h2>
+            <p><strong>Description:</strong> {{ result.description }}</p>
+            <p><strong>Precautions:</strong></p>
+            <ul>
+                {% for item in result.precautions %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+            <p><strong>AI Explanation:</strong></p>
+            <div class="ai-response">{{ result.genai }}</div>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

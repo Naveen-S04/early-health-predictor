@@ -1,0 +1,63 @@
+/* static/style.css */
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+    color: #333;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin: 5px 0;
+}
+
+.symptom-list {
+    column-count: 2;
+    margin: 20px 0;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.result {
+    margin-top: 30px;
+    padding: 20px;
+    background: #e7f3fe;
+    border-left: 5px solid #2196F3;
+}
+
+.ai-response {
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+    white-space: pre-wrap;
+}
